@@ -3,12 +3,6 @@ from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
 
 
-class User(AbstractUser):
-    is_patient = models.BooleanField(default=False)
-    is_doctor = models.BooleanField(default=False)
-    is_pharmacist = models.BooleanField(default=False)
-
-
 class Hospital(models.Model):
     """for hospital departments"""
     id = models.IntegerField('ID', primary_key=True)
@@ -37,7 +31,6 @@ class Pharmacy(models.Model):
 class Patient(models.Model):
     """model representing patient"""
     GENDER_CHOICES = [('M', 'Male'), ('F', 'Female')]
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
     ssn = models.IntegerField('SSN', blank=False, primary_key=True)
     first_name = models.CharField('First Name', max_length=50)
     last_name = models.CharField('Last Name', max_length=50)
