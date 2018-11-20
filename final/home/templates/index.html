@@ -5,10 +5,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <style>
+        ul#about li {
+            display:inline;
+        }
+    </style>
 </head>
 <body>
-    <p><strong>Total Patients: </strong>{{ num_patients }}</p>
-    <p><strong>Total Doctors: </strong>{{ num_doctors }}</p>
+    <ul id="about" class="sidebar-nav" style="list-style: none;">
+          <li><a href="{% url 'login' %}"></a>Login</li>
+          <li><a href="{% url 'about' %}">About</a></li>
+    </ul>
 </body>
 </html>
 {% endblock %}
