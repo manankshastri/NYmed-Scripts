@@ -1,47 +1,28 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Home - NYmed Scripts</title>
-    <link rel="stylesheet" id="ample-style-css" href="{% static 'style.css' %}" type="text/css" media="all">
+  {% block title %}<title>Local Library</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
-    <body class="wide">
-        <div id="page" class="hfeed site">
-            <header>
-                <div class="header">
-                    <div class="main-head-wrap inner-wrap clearfix">
-                        <div id="header-logo-image">
-                            <a href="/">
-                                <img src="{% static 'images/log.png' %}" alt="NYmed Scripts">
-                            </a>
-                        </div>
-                        <div id="header-text" class="">
-                            <h1 id="site-title">
-                                <a href="/" title="NYmed Scripts" rel="home">NYmed Scripts</a>
-                            </h1>
-                        </div>
-                    </div>
-                </div>
-            </header>
-            <div class="main-wrapper">
-                <div class="single-page clearfix">
-                    <div class="inner-wrap">
-                        <p>
-                        <hr>
-                        <div>
-                            {% block content %}
-                            {% endblock %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <footer id="colophon">
-                <div class="inner-wrap">
-                    Seriously?
-                </div>
-            </footer>
-        </div>
-    <script src="{% static 'main.js' %}"></script>
-    </body>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-2">
+      {% block sidebar %}
+        <ul class="sidebar-nav">
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="">All books</a></li>
+          <li><a href="">All authors</a></li>
+        </ul>
+     {% endblock %}
+      </div>
+      <div class="col-sm-10 ">{% block content %}{% endblock %}</div>
+    </div>
+  </div>
+</body>
 </html>
