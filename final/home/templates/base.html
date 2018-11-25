@@ -27,14 +27,15 @@
              <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
            {% endif %}
         </ul>
-     {% endblock %}   -->
-          <a href="{% url 'index' %}">NYmed Scripts</a>
+     {% endblock %}
+          <a href="{% url 'index' %}">NYmed Scripts</a> -->
       </div>
       <div class="col-6 text-right">
           {% if user.is_authenticated %}
             <p class="pt-3">Logged in as <strong>{{ user.username }}</strong>. <a href="{% url 'logout' %}">Log out</a>.</p>
           {% else %}
             <a href="{% url 'login' %}" class="btn btn-light" role="button">Log in</a>
+            <a href="{% url 'about' %}" class="btn btn-light" role="button">About</a>
           {% endif %}
       </div>
 
