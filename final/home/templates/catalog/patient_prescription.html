@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block content %}
+<!--
+  <h1>{{ patient.first_name }} {{ patient.last_name}}</h1>
+
+  <p><strong>SSN: </strong> {{ patient.ssn }}</p>
+  <p><strong>Gender: </strong> {{ patient.gender }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Prescriptions: </h4>
+
+    {% for p in patient.prescription_set.all %}
+      <hr>
+      <p><strong>Doctor: </strong> {{p.doctor}}</p>
+      <p><strong>Prescription Date: </strong> {{p.dop}}</p>
+      <p><strong>Prescription Details: </strong> {{p.desc}}</p>
+      <p><strong>Drug ID: </strong> {{p.drug}}</p>
+    {% endfor %}
+  </div>
+
+  <h2>{{ patient.first_name }} {{ patient.last_name}}</h2>
+  <h1>Prescriptions</h1>
+  {% if patient.prescription_list %}
+    {% for p in patient.prescription_set.all %}
+      <hr>
+      <p><strong>Doctor: </strong> {{p.doctor}}</p>
+      <p><strong>Prescription Date: </strong> {{p.dop}}</p>
+      <p><strong>Prescription Details: </strong> {{p.desc}}</p>
+      <p><strong>Drug ID: </strong> {{p.drug}}</p>
+    {% endfor %}
+  {% else %}
+    <p>There are no presciptions available.</p>
+  {% endif %}
+  -->
+  <div class="content">
+        <div class="section-inner clearfix">
+
+        <p>Welcome {{ request.user.username }} !</p>
+
+        <p>User Details:</p>
+
+        <ul>
+            <li>Email: {{ request.user.email|default:"NA" }}</li>
+            <li>SuperUser: {{ request.user.is_superuser }}</li>
+            <li>Staff: {{ request.user.is_staff }}</li>
+            <li>Date Joined: {{ request.user.date_joined }}</li>
+            <li>Last Login: {{ request.user.last_login }}</li>
+        </ul>
+        </div>
+    </div>
+{% endblock %}

@@ -1,6 +1,10 @@
 from django.shortcuts import render
 from .models import Patient, Doctor, Prescription
 from django.views import generic
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
+from django.http import HttpResponseRedirect
+from django.urls import reverse
 
 # Create your views here.
 
@@ -38,3 +42,16 @@ def about(request):
 
     # render the HTML template index.html with the data in the context variable
     return render(request, 'about.html', context=context)
+
+
+class PatientDetailView(LoginRequiredMixin, generic.ListView):
+    model = Patient
+    template_name = 'catalog/patient_prescription.html'
+
+
+class DoctorDetailView(generic.DetailView):
+    model = Doctor
+
+
+
+
