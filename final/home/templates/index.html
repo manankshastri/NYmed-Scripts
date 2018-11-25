@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
-
 {% block content %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Index</title>
+    <style>
+        ul#about li {
+            display:inline;
+        }
+    </style>
 </head>
 <body>
-    <p class="lead">
-        You are <a href="">Patient</a> or <a href="">Doctor</a>.
-    </p>
-    <hr>
-    <h3>About: </h3>
-    <p><strong>Total Patients: </strong>{{ num_patients }}</p>
-    <p><strong>Total Doctors: </strong>{{ num_doctors }}</p>
+    <ul id="about" class="sidebar-nav" style="list-style: none;">
+          <li><a href="{% url 'login' %}">Login</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+    </ul>
 </body>
 </html>
 {% endblock %}
