@@ -18,14 +18,14 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
-from django.conf.urls import url
-from home import views
+
+from home.views import home, patient, doctor
 # from home import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('home.urls')),
-    path('', RedirectView.as_view(url='/home/')),
+    # path('', RedirectView.as_view(url='/home/')),
     path('accounts/', include('django.contrib.auth.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
