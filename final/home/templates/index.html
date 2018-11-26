@@ -4,19 +4,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
-    <style>
-        ul#about li {
-            display:inline;
-        }
-    </style>
+    <title>Home</title>
 </head>
 <body>
-<!--
-    <ul id="about" class="sidebar-nav" style="list-style: none;">
-          <li><a href="{% url 'login' %}">Login</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-    </ul> -->
+    <h1><strong>Welcome to NYmed Scripts</strong></h1>
+    <p><strong>Total Patients: </strong>{{ num_patients }}</p>
+    <p><strong>Total Doctors: </strong>{{ num_doctors }}</p>
 </body>
 </html>
 {% endblock %}
