@@ -27,23 +27,6 @@ def index(request):
     return render(request, 'index.html', context=context)
 
 
-def about(request):
-    """ view function for home page"""
-    # generate number of patients
-    num_patients = Patient.objects.all().count()
-
-    # generate number of doctors
-    num_doctors = Doctor.objects.all().count()
-
-    context = {
-        'num_patients': num_patients,
-        'num_doctors': num_doctors,
-    }
-
-    # render the HTML template index.html with the data in the context variable
-    return render(request, 'about.html', context=context)
-
-
 class PatientView(LoginRequiredMixin, generic.ListView):
     model = Patient
     template_name = 'catalog/patient_list.html'

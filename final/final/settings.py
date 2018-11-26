@@ -125,3 +125,5 @@ STATICFILES_DIRS = [
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+
+AUTH_USER_MODEL = 'home.User'
