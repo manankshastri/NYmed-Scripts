@@ -56,8 +56,6 @@ class Doctor(models.Model):
     last_name = models.CharField('Last Name', max_length=50)
     hosp_id = models.ForeignKey(Hospital, on_delete=models.SET_NULL, null=True)
     specialty = models.CharField(max_length=50)
-    # patient = models.ManyToManyField(Patient)
-    # description = models.TextField()
 
     def __str__(self):
         return f'{self.prefix} {self.first_name} {self.last_name} ({self.specialty})'

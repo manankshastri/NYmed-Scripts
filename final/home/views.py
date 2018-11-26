@@ -44,14 +44,13 @@ def about(request):
     return render(request, 'about.html', context=context)
 
 
-class PatientDetailView(LoginRequiredMixin, generic.ListView):
+class PatientView(LoginRequiredMixin, generic.ListView):
     model = Patient
-    template_name = 'catalog/patient_prescription.html'
+    template_name = 'catalog/patient_list.html'
 
 
-class DoctorDetailView(generic.DetailView):
-    model = Doctor
-
-
+class PatientDetailView(LoginRequiredMixin, generic.DetailView):
+    model = Patient
+    template_name = 'catalog/patient_detail.html'
 
 
