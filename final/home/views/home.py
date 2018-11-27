@@ -7,4 +7,4 @@ def index(request):
             return redirect('doctor:profile')
         else:
             return redirect('patient:profile')
-    return render(request, 'home/')
+    return render(request, 'home/index.html')

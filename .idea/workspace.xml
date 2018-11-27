@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4a92ef6-6149-4655-8cc3-18a797c3d7fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/final/final/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/final/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/final/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/final/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/catalog/patient_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/catalog/patient_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/catalog/patient_prescription.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/home/templates/patient/patient_detail.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/home/templates/patient/patient_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/home/templates/patient/patient_prescription.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/home/views/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/views/home.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/templates/index.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +20,7 @@
         <entry file="file://$PROJECT_DIR$/final/home/views/home.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -150,26 +147,6 @@
               <item name="Final" type="462c0819:PsiDirectoryNode" />
               <item name="final" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final" type="462c0819:PsiDirectoryNode" />
-              <item name="final" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final" type="462c0819:PsiDirectoryNode" />
-              <item name="final" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Final" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Final" type="462c0819:PsiDirectoryNode" />
-              <item name="final" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -209,12 +186,12 @@
       <workItem from="1543079684976" duration="6367000" />
       <workItem from="1543174353140" duration="9126000" />
       <workItem from="1543201455430" duration="1765000" />
-      <workItem from="1543265202556" duration="8570000" />
+      <workItem from="1543265202556" duration="9891000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25828000" />
+    <option name="totallyTimeSpent" value="27149000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -424,7 +401,7 @@
     <entry file="file://$PROJECT_DIR$/final/home/views/home.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
         </state>
       </provider>
     </entry>
