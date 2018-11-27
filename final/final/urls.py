@@ -27,6 +27,9 @@ urlpatterns = [
     path('home/', include('home.urls')),
     # path('', RedirectView.as_view(url='/home/')),
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/signup/', home.SignUpView.as_view(), name='signup'),
+    path('accounts/signup/patient/', patient.PatientSignUpView.as_view(), name='patient_signup'),
+    path('accounts/signup/doctor/', doctor.DoctorSignUpView.as_view(), name='doctor_signup'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

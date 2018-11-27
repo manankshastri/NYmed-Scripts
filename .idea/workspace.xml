@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4a92ef6-6149-4655-8cc3-18a797c3d7fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/final/home/templates/patient/patient_detail.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/patient/patient_list.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/patient/patient_prescription.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/final/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/final/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/home/views/home.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/views/home.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/templates/index.html" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +13,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/final/home/views/home.py">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/final/templates/registration/signup.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+              <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/final/templates/registration/signup_form.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -37,11 +55,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/final/final/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
+            <state relative-caret-position="424">
+              <caret line="31" column="83" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
               <folding>
                 <element signature="e#629#661#0" expanded="true" />
               </folding>
@@ -78,8 +96,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -112,11 +130,13 @@
         <option value="$PROJECT_DIR$/final/home/views.py" />
         <option value="$PROJECT_DIR$/final/home/models.py" />
         <option value="$PROJECT_DIR$/final/final/settings.py" />
-        <option value="$PROJECT_DIR$/final/final/urls.py" />
         <option value="$PROJECT_DIR$/final/home/views/patient.py" />
         <option value="$PROJECT_DIR$/final/home/views/doctor.py" />
         <option value="$PROJECT_DIR$/final/home/urls.py" />
         <option value="$PROJECT_DIR$/final/home/views/home.py" />
+        <option value="$PROJECT_DIR$/final/templates/registration/signup.html" />
+        <option value="$PROJECT_DIR$/final/templates/registration/signup_form.html" />
+        <option value="$PROJECT_DIR$/final/final/urls.py" />
       </list>
     </option>
   </component>
@@ -146,6 +166,19 @@
               <item name="Final" type="b2602c69:ProjectViewProjectNode" />
               <item name="Final" type="462c0819:PsiDirectoryNode" />
               <item name="final" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final" type="462c0819:PsiDirectoryNode" />
+              <item name="final" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Final" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Final" type="462c0819:PsiDirectoryNode" />
+              <item name="final" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="registration" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -186,18 +219,18 @@
       <workItem from="1543079684976" duration="6367000" />
       <workItem from="1543174353140" duration="9126000" />
       <workItem from="1543201455430" duration="1765000" />
-      <workItem from="1543265202556" duration="9891000" />
+      <workItem from="1543265202556" duration="10212000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27149000" />
+    <option name="totallyTimeSpent" value="27470000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16868381" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19591528" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -358,16 +391,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/final/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#629#661#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/final/home/views/patient.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -388,6 +411,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/final/templates/registration/signup.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="8" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/templates/registration/signup_form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="18" column="14" lean-forward="true" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/final/home/views/home.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/final/home/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -398,10 +445,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/final/home/views/home.py">
+    <entry file="file://$PROJECT_DIR$/final/final/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+        <state relative-caret-position="424">
+          <caret line="31" column="83" selection-start-line="31" selection-start-column="83" selection-end-line="31" selection-end-column="83" />
+          <folding>
+            <element signature="e#629#661#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
