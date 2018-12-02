@@ -76,7 +76,7 @@ class Doctor(models.Model):
         return f'{self.prefix} {self.first_name} {self.last_name} ({self.specialty})'
 
     class Meta:
-        ordering = ['first_name', 'last_name']
+        ordering = ['ssn']
 
     def get_absolute_url(self):
         return reverse('doctor_detail', args=[str(self.ssn)])
