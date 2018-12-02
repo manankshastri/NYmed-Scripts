@@ -3,21 +3,20 @@
 {% block content %}
 
 <div style="margin-left:20px;">
-    <h1><u>Patient Profile</u></h1>
-        <h2>{{user.patient.first_name}} {{user.patient.last_name}}</h2>
-        <p><strong>Email:</strong> {{ user.email }}</p>
-        <p><strong>Gender:</strong> {{user.patient.gender}}</p>
-        <p><strong>SSN:</strong> {{user.patient.ssn}}</p>
+    <h2>{{user.patient.first_name}} {{user.patient.last_name}}</h2>
+    <p><strong>Email:</strong> {{ user.email }}</p>
+    <p><strong>Gender:</strong> {{user.patient.gender}}</p>
+    <p><strong>SSN:</strong> {{user.patient.ssn}}</p>
 
-        <div style="margin-left:20px;margin-top:20px">
-            <h4>Prescriptions: </h4>
+    <div style="margin-left:20px;margin-top:20px">
+        <h4>Prescriptions: </h4>
 
-            {% for p in user.patient.prescription_set.all %}
-              <hr>
-              <p><strong>Doctor: </strong> {{p.doctor}}</p>
-              <p><strong>Prescription Date: </strong> {{p.dop}} &nbsp; &nbsp; &nbsp; &nbsp; <strong>Prescription Details: </strong> {{p.desc}}</p>
-              <p></p>
-            {% endfor %}
-        </div>
+        {% for p in user.patient.prescription_set.all %}
+          <hr>
+          <p><strong>Doctor: </strong> {{p.doctor}}</p>
+          <p><strong>Prescription Date: </strong> {{p.dop}} &nbsp; &nbsp; &nbsp; &nbsp; <strong>Prescription Details: </strong> {{p.desc}}</p>
+          <p></p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
