@@ -7,4 +7,16 @@
     <p><strong>Email:</strong> {{ user.email }}</p>
     <p><strong>Gender:</strong> {{user.patient.gender}}</p>
     <p><strong>SSN:</strong> {{user.patient.ssn}}</p>
+
+    <div style="margin-left:20px;margin-top:20px">
+    <h4>Prescriptions: </h4>
+
+    {% for p in user.patient.prescription_set.all %}
+      <hr>
+      <p><strong>Doctor: </strong> {{p.doctor}}</p>
+      <p><strong>Prescription Date: </strong> {{p.dop}}</p>
+      <p><strong>Prescription Details: </strong> {{p.desc}}</p>
+    {% endfor %}
+  </div>
+
 {% endblock %}

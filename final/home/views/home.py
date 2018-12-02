@@ -7,6 +7,7 @@ class SignUpView(TemplateView):
 
 
 def index(request):
+        
     if request.user.is_authenticated:
         if request.user.is_doctor:
             return redirect('doctor:doctor_list')

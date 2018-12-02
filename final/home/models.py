@@ -3,6 +3,7 @@ from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
 from django.db.models.signals import post_save
 
+
 class User(AbstractUser):
     is_patient = models.BooleanField(default=False)
     is_doctor = models.BooleanField(default=False)
@@ -21,7 +22,7 @@ class Patient(models.Model):
         ordering = ['ssn']
 
     def __str__(self):
-        return f'{self.ssn} {self.user}'
+        return f'{self.first_name} {self.last_name}'
 
     def get_absolute_url(self):
         """Returns the url to access a detail record for this patient."""
