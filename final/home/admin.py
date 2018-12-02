@@ -1,6 +1,11 @@
 from django.contrib import admin
-from .models import Patient, Doctor, Prescription, Hospital, Pharmacy
+from .models import Patient, Doctor, Prescription
+from django.contrib.auth import get_user_model
 # Register your models here.
+
+User = get_user_model()
+
+admin.site.register(User)
 
 
 class PrecInLine(admin.TabularInline):
@@ -9,8 +14,8 @@ class PrecInLine(admin.TabularInline):
 
 # define the doctor admin class
 class DoctorAdmin(admin.ModelAdmin):
-    list_display = ('ssn', 'first_name', 'last_name', 'specialty', 'hosp_id')
-    fields = ['ssn', ('prefix', 'first_name', 'last_name'), ('specialty', 'hosp_id')]
+    list_display = ('ssn', 'user', 'first_name', 'last_name', 'gender', 'specialty')
+    fields = ['user', 'ssn', ('prefix', 'first_name', 'last_name', 'gender'), 'specialty']
     inlines = [PrecInLine]
 
 
@@ -20,20 +25,11 @@ admin.site.register(Doctor, DoctorAdmin)
 
 @admin.register(Patient)
 class PatientAdmin(admin.ModelAdmin):
-    list_display = ('ssn', 'first_name', 'last_name')
-    fields = ['ssn', ('first_name', 'last_name'), 'gender']
+    list_display = ('ssn', 'user', 'first_name', 'last_name')
+    fields = ['ssn', ('user', 'first_name', 'last_name'), 'gender']
 
 
 @admin.register(Prescription)
 class PrescriptionAdmin(admin.ModelAdmin):
-    list_display = ('patient', 'doctor', 'dop', 'desc', 'drug')
+    list_display = ('patient', 'doctor', 'dop', 'desc')
 
-
-@admin.register(Hospital)
-class HospitalAdmin(admin.ModelAdmin):
-    list_display = ('id', 'depart')
-
-
-@admin.register(Pharmacy)
-class PharmacyAdmin(admin.ModelAdmin):
-    list_display = ('id', 'drugid')

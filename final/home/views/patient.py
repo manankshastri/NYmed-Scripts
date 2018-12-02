@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse_lazy
+from django.urls import reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView, DetailView
 
@@ -25,11 +25,30 @@ class PatientSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('patient:patient_detail')
+        return redirect('patient:patient_list')
+
+
+@method_decorator([login_required, patient_required], name='dispatch')
+class PatientListView(ListView):
+    model = Patient
+    template_name = 'home/patient/patient_list.html'
+
+    def get_queryset(self):
+        return Patient.objects.all()
 
 
 @method_decorator([login_required, patient_required], name='dispatch')
 class PatientDetailView(DetailView):
     model = Patient
     template_name = 'home/patient/patient_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(PatientDetailView, self).get_context_data(**kwargs)
+        context['Patient'] = Patient.objects.filter(list=self.object)
+        return context
+
+
+
+
+
 

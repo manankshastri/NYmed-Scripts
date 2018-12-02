@@ -20,10 +20,10 @@
             <a href="{% url 'index' %}" class="btn btn-info" role="button">Home</a>
       <div class="col-lg-11 text-right">
           {% if user.is_authenticated %}
-                <p class="pt-20">Logged in as <strong>{{ user.username }}</strong>. <a href="{% url 'logout' %}">Log out</a>.</p>
+                <p class="pt-20">Logged in as <strong>{{ user.username }}</strong> <a href="{% url 'logout' %}">Log out</a>.</p>
           {% else %}
                 <a href="{% url 'login' %}" class="btn btn-light" role="button">Log in</a>
-                <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Sign up</a>
+                <a href="{% url 'signup' %}" class="btn btn-danger" role="button">Signup</a>
           {% endif %}
       </div>
 

@@ -25,13 +25,19 @@ class DoctorSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('doctor:doctor_detail')
+        return redirect('doctor:doctor_list')
 
 
 @method_decorator([login_required, doctor_required], name='dispatch')
 class DoctorDetailView(DetailView):
     model = Doctor
     template_name = 'home/doctor/doctor_detail.html'
+
+
+@method_decorator([login_required, doctor_required], name='dispatch')
+class DoctorListView(ListView):
+    model = Doctor
+    template_name = 'home/doctor/doctor_list.html'
 
 """
 @method_decorator([login_required, doctor_required], name='dispatch')

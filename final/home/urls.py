@@ -3,7 +3,14 @@ from .views import home, patient, doctor
 
 urlpatterns = [
     path('', home.index, name='index'),
-    # path('p/', patient.PatientView.as_view(), name='patients'),
-    path('patient/<int:pk>', patient.PatientDetailView.as_view(), name='patient-detail'),
-    path('doctor/<int:pk>', doctor.DoctorDetailView.as_view(), name='doctor-detail'),
+
+    path('patient/', include(([
+        path('pro/', patient.PatientListView.as_view(), name='patient_list'),
+        path('pro/<int:ssn>', patient.PatientDetailView.as_view(), name='patient_detail')
+    ], 'home'), namespace='patient')),
+
+    path('doctor/', include(([
+        path('doc/', doctor.DoctorListView.as_view(), name='doctor_list'),
+        path('doc/<int:pk>', doctor.DoctorDetailView.as_view(), name='doctor_detail'),
+    ], 'home'), namespace='doctor')),
 ]
