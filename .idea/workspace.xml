@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e4a92ef6-6149-4655-8cc3-18a797c3d7fd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/final/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/final/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/home/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/templates/home/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/home/patient/patient_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/templates/home/patient/patient_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/templates/registration/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/templates/registration/login.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
