@@ -39,8 +39,15 @@ class DoctorListView(ListView):
     model = Doctor
     template_name = 'home/doctor/doctor_list.html'
 
-"""
+    
 @method_decorator([login_required, doctor_required], name='dispatch')
+class DoctorProfileView(DetailView):
+    model = Doctor
+    template_name = 'home/doctor/doctor_profile.html'
+    
+
+"""
+@method_decorator([login_required, doctor_required], name='dispatch'])
 class QuizListView(ListView):
     model = Prescription
     ordering = ('name', )

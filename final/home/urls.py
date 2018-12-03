@@ -11,6 +11,7 @@ urlpatterns = [
 
     path('doctor/', include(([
         path('doc/', doctor.DoctorListView.as_view(), name='doctor_list'),
+        path('doc/profile/<int:pk>', doctor.DoctorProfileView.as_view(), name='doctor_profile'),
         path('doc/<int:pk>', doctor.DoctorDetailView.as_view(), name='doctor_detail'),
     ], 'home'), namespace='doctor')),
 ]
