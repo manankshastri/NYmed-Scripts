@@ -43,7 +43,10 @@ class PatientDetailView(DetailView):
     template_name = 'home/patient/patient_detail.html'
 
 
-
+@method_decorator([login_required, patient_required], name='dispatch')
+class PatientProfileView(DetailView):
+    model = Patient
+    template_name = 'home/patient/patient_profile.html'
 
 
 

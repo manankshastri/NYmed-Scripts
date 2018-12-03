@@ -1,13 +1,17 @@
+<!DOCTYPE html>
 {% extends "base.html" %}
 
 {% block content %}
-
-<div style="margin-left:20px;">
-    <h2>{{user.patient.first_name}} {{user.patient.last_name}}</h2>
-    <p><strong>Email:</strong> {{ user.email }}</p>
-    <p><strong>Gender:</strong> {{user.patient.gender}}</p>
-    <p><strong>SSN:</strong> {{user.patient.ssn}}</p>
-
-    <p><a href="{% url 'patient:patient_detail' user.patient.ssn %}">View Prescriptions</a></p>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <ul>
+            <li><a href="{% url 'patient:patient_profile' user.patient.ssn%}">Profile</a></li>
+            <li><a href="{% url 'patient:patient_detail' user.patient.ssn %}">All Prescriptions</a></li>
+        </ul>
+        <div style="margin-left: 20px">
+            <h2>{{user.patient.first_name}} {{user.patient.last_name}}</h2>
+        </div>
+    </div>
 </div>
-{% endblock %}
+{% endblock %}       

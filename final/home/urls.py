@@ -6,7 +6,8 @@ urlpatterns = [
 
     path('patient/', include(([
         path('pro/', patient.PatientListView.as_view(), name='patient_list'),
-        path('pro/<int:pk>', patient.PatientDetailView.as_view(), name='patient_detail')
+        path('pro/profile/<int:pk>', patient.PatientProfileView.as_view(), name='patient_profile'),
+        path('pro/<int:pk>', patient.PatientDetailView.as_view(), name='patient_detail'),
     ], 'home'), namespace='patient')),
 
     path('doctor/', include(([
