@@ -9,15 +9,6 @@
     <p><strong>SSN: </strong> {{ user.doctor.ssn }}</p>
     <p><strong>Specialty: </strong> {{ user.doctor.specialty }}</p>
     
-    <div style="margin-left:20px;margin-top:20px">
-        <h4>Prescriptions: </h4>
-
-        {% for p in user.doctor.prescription_set.all %}
-          <hr>
-          <p><strong>Patient: </strong> {{p.patient}}</p>
-          <p><strong>Prescription Date: </strong> {{p.dop}} &nbsp; &nbsp; &nbsp; &nbsp; <strong>Prescription Details: </strong> {{p.desc}}</p>
-          <p></p>
-        {% endfor %}
-    </div>
+    <p><a href="{% url 'doctor:doctor_detail' user.doctor.ssn %}">View Prescriptions</a></p>
 </div>
 {% endblock %}
