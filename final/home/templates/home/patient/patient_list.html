@@ -8,15 +8,6 @@
     <p><strong>Gender:</strong> {{user.patient.gender}}</p>
     <p><strong>SSN:</strong> {{user.patient.ssn}}</p>
 
-    <div style="margin-left:20px;margin-top:20px">
-        <h4>Prescriptions: </h4>
-
-        {% for p in user.patient.prescription_set.all %}
-          <hr>
-          <p><strong>Doctor: </strong> {{p.doctor}}</p>
-          <p><strong>Prescription Date: </strong> {{p.dop}} &nbsp; &nbsp; &nbsp; &nbsp; <strong>Prescription Details: </strong> {{p.desc}}</p>
-          <p></p>
-        {% endfor %}
-    </div>
+    <p><a href="{% url 'patient:patient_detail' user.patient.ssn %}">View Prescriptions</a></p>
 </div>
 {% endblock %}

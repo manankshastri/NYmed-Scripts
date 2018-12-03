@@ -2,20 +2,14 @@
 
 {% block content %}
 
-  <h1>{{ patient.first_name }} {{ patient.last_name}}</h1>
-
-  <p><strong>SSN: </strong> {{ patient.ssn }}</p>
-  <p><strong>Gender: </strong> {{ patient.gender }}</p>
-
-  <div style="margin-left:20px;margin-top:20px">
+<div style="margin-left:20px;margin-top:20px">
     <h4>Prescriptions: </h4>
 
-    {% for p in patient.prescription_set.all %}
-      <hr>
-      <p><strong>Doctor: </strong> {{p.doctor}}</p>
-      <p><strong>Prescription Date: </strong> {{p.dop}}</p>
-      <p><strong>Prescription Details: </strong> {{p.desc}}</p>
+    {% for p in user.patient.prescription_set.all %}
+        <hr>
+        <p><strong>Doctor: </strong> {{p.doctor}}</p>
+        <p><strong>Prescription Date: </strong> {{p.dop}} &nbsp; &nbsp; &nbsp; &nbsp; <strong>Prescription Details: </strong> {{p.desc}}</p>
+        <p></p>
     {% endfor %}
-  </div>
-
+</div>
 {% endblock %}

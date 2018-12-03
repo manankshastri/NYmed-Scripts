@@ -42,10 +42,6 @@ class PatientDetailView(DetailView):
     model = Patient
     template_name = 'home/patient/patient_detail.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(PatientDetailView, self).get_context_data(**kwargs)
-        context['Patient'] = Patient.objects.filter(list=self.object)
-        return context
 
 
 
