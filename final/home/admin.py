@@ -14,8 +14,8 @@ class PrecInLine(admin.TabularInline):
 
 # define the doctor admin class
 class DoctorAdmin(admin.ModelAdmin):
-    list_display = ('ssn', 'user', 'first_name', 'last_name', 'gender', 'specialty')
-    fields = ['user', 'ssn', ('prefix', 'first_name', 'last_name', 'gender'), 'specialty']
+    list_display = ('ssn', 'user', 'first_name', 'last_name', 'email', 'gender', 'specialty')
+    fields = ['user', 'ssn', ('prefix', 'first_name', 'last_name', 'email', 'gender'), 'specialty']
     inlines = [PrecInLine]
 
 
@@ -25,8 +25,8 @@ admin.site.register(Doctor, DoctorAdmin)
 
 @admin.register(Patient)
 class PatientAdmin(admin.ModelAdmin):
-    list_display = ('ssn', 'user', 'first_name', 'last_name')
-    fields = ['ssn', ('user', 'first_name', 'last_name'), 'gender']
+    list_display = ('ssn', 'user', 'first_name', 'last_name','email', 'gender')
+    fields = ['ssn', ('user', 'first_name', 'last_name','email'), 'gender']
 
 
 @admin.register(Prescription)

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4a92ef6-6149-4655-8cc3-18a797c3d7fd" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/final/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/home/templates/home/doctor/doctor_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/templates/home/doctor/doctor_detail.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/home/templates/home/patient/patient_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/templates/home/patient/patient_list.html" afterDir="false" />
@@ -295,12 +296,12 @@
       <workItem from="1543338362591" duration="12530000" />
       <workItem from="1543619376348" duration="4565000" />
       <workItem from="1543681404967" duration="16194000" />
-      <workItem from="1543769036551" duration="4319000" />
+      <workItem from="1543769036551" duration="4869000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71470000" />
+    <option name="totallyTimeSpent" value="72020000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
