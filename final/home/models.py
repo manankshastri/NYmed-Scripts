@@ -16,7 +16,7 @@ class Patient(models.Model):
     ssn = models.IntegerField('SSN', blank=False, primary_key=True)
     first_name = models.CharField('First Name', max_length=50, blank=False)
     last_name = models.CharField('Last Name', max_length=50, blank=False)
-    email = models.EmailField('Email', max_length=255, blank=True, null=True, unique=True)
+    email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     
     class Meta:
@@ -71,7 +71,7 @@ class Doctor(models.Model):
     first_name = models.CharField('First Name', max_length=50, blank=False)
     last_name = models.CharField('Last Name', max_length=50, blank=False)
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
-    email = models.EmailField('Email', max_length=255, blank=True, null=True, unique=True)
+    email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
     specialty = models.CharField(max_length=50)
 
     def __str__(self):
