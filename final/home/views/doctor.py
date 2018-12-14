@@ -47,23 +47,8 @@ class DoctorProfileView(DetailView):
     
 
 """
-@method_decorator([login_required, doctor_required], name='dispatch'])
-class QuizListView(ListView):
-    model = Prescription
-    ordering = ('name', )
-    context_object_name = 'Prescriptions'
-    template_name = 'home/prescription/prescription_list.html'
-
-    def get_queryset(self):
-        queryset = self.request.user.quizzes \
-            .select_related('subject') \
-            .annotate(questions_count=Count('questions', distinct=True)) \
-            .annotate(taken_count=Count('taken_quizzes', distinct=True))
-        return queryset
-
-
 @method_decorator([login_required, doctor_required], name='dispatch')
-class QuizCreateView(CreateView):
+class PrescriptionCreateView(CreateView):
     model = Quiz
     fields = ('name', 'subject', )
     template_name = 'classroom/teachers/quiz_add_form.html'
