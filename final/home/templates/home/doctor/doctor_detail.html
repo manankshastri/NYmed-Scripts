@@ -13,4 +13,32 @@
       <p></p>
     {% endfor %}
 </div>
+
+<div class="card">
+    <table class="table mb-0">
+      <thead>
+        <tr>
+          <th>Patient</th>
+          <th>Prescription Date</th>
+          <th>Prescription Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in user.doctor.prescription_set.all %}
+          <tr>
+            <td class="align-middle"><a href="">{{p.patient}}</a></td>
+            <td class="align-middle">{{p.dop}}</td>
+            <td class="align-middle">{{p.desc}}</td>
+            <td class="text-right">
+              <a href="" class="btn btn-primary">Edit</a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="5">There are no prescriptions.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}

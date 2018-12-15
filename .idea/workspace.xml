@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4a92ef6-6149-4655-8cc3-18a797c3d7fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/final/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/home/doctor/doctor_addpresc.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/templates/home/doctor/doctor_addpresc.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/templates/home/doctor/doctor_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/templates/home/doctor/doctor_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/final/home/views/doctor.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/views/doctor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/final/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/final/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +103,7 @@
         <entry file="file://$PROJECT_DIR$/final/home/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="444">
-              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+              <caret line="106" selection-start-line="106" selection-end-line="106" />
               <folding>
                 <element signature="e#0#28#0" expanded="true" />
               </folding>
@@ -120,7 +115,7 @@
         <entry file="file://$PROJECT_DIR$/final/home/views/patient.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="640">
-              <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+              <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -502,7 +497,7 @@
     <entry file="file://$PROJECT_DIR$/final/home/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="444">
-          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
           <folding>
             <element signature="e#0#28#0" expanded="true" />
           </folding>
@@ -535,7 +530,7 @@
     <entry file="file://$PROJECT_DIR$/final/home/views/patient.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="640">
-          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>

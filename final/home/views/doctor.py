@@ -57,17 +57,13 @@ class PrescriptionCreateView(CreateView):
     def form_valid(self, form):
         form.instance.doctor = self.request.user.doctor
         return super().form_valid(form)
-"""    
-        prescription = form.save(commit=False)
-        prescription.owner = self.request.user.doctor
-        prescription.save()
-        return redirect('doctor:doctor_detail', self.request.user.doctor.ssn)
 
 
+"""  
 @method_decorator([login_required, doctor_required], name='dispatch')
-class QuizUpdateView(UpdateView):
-    model = Quiz
-    fields = ('name', 'subject', )
+class PrescriptionUpdateView(UpdateView):
+    model = Prescription
+    fields = ('patient', 'dop', 'desc', )
     context_object_name = 'quiz'
     template_name = 'classroom/teachers/quiz_change_form.html'
 
