@@ -93,8 +93,8 @@ class Prescription(models.Model):
     # model representing prescription
     patient = models.ForeignKey(Patient, on_delete=models.SET_NULL, null=True)
     doctor = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null=True)
-    dop = models.DateField(null=True, blank=False)
-    desc = models.TextField('Prescription', help_text='Enter the prescription : ', null=True)
+    dop = models.DateField('Prescription Date', null=True, blank=False)
+    desc = models.TextField('Prescription Details', null=True)
 
     class Meta:
         ordering = ['patient']
