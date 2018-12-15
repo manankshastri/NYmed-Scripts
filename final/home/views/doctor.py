@@ -59,7 +59,7 @@ class PrescriptionCreateView(CreateView):
         return super().form_valid(form)
 
 
-"""  
+
 @method_decorator([login_required, doctor_required], name='dispatch')
 class PrescriptionUpdateView(UpdateView):
     model = Prescription
@@ -82,7 +82,7 @@ class PrescriptionUpdateView(UpdateView):
     def get_success_url(self):
         return reverse('teachers:quiz_change', kwargs={'pk': self.object.pk})
 
-
+"""  
 @method_decorator([login_required, doctor_required], name='dispatch')
 class QuizDeleteView(DeleteView):
     model = Quiz
