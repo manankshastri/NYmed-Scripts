@@ -46,19 +46,22 @@ class DoctorProfileView(DetailView):
     template_name = 'home/doctor/doctor_profile.html'
     
 
-"""
+
 @method_decorator([login_required, doctor_required], name='dispatch')
 class PrescriptionCreateView(CreateView):
-    model = Quiz
-    fields = ('name', 'subject', )
-    template_name = 'classroom/teachers/quiz_add_form.html'
+    model = Prescription
+    fields = ('patient', 'dop', 'desc', )
+    template_name = 'home/doctor/doctor_addpresc.html'
 
+    
     def form_valid(self, form):
-        quiz = form.save(commit=False)
-        quiz.owner = self.request.user
-        quiz.save()
-        messages.success(self.request, 'The quiz was created with success! Go ahead and add some questions now.')
-        return redirect('teachers:quiz_change', quiz.pk)
+        form.instance.doctor = self.request.user.doctor
+        return super().form_valid(form)
+"""    
+        prescription = form.save(commit=False)
+        prescription.owner = self.request.user.doctor
+        prescription.save()
+        return redirect('doctor:doctor_detail', self.request.user.doctor.ssn)
 
 
 @method_decorator([login_required, doctor_required], name='dispatch')

@@ -81,7 +81,7 @@ class Doctor(models.Model):
         ordering = ['ssn']
 
     def get_absolute_url(self):
-        return reverse('doctor_detail', args=[str(self.ssn)])
+        return reverse('doctor:doctor_detail', args=[str(self.ssn)])
 
 def create_profile_doc(sender, **kwargs):
     if kwargs['created']:
@@ -102,4 +102,5 @@ class Prescription(models.Model):
     def __str__(self):
         return f'{self.patient} {self.doctor} {self.desc}'
 
-
+    def get_absolute_url(self):
+        return reverse('doctor:doctor_detail', args=[str(self.doctor.ssn)])
