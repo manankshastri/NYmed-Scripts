@@ -59,7 +59,24 @@ class PrescriptionCreateView(CreateView):
         return super().form_valid(form)
 
 
+    
+@method_decorator([login_required, doctor_required], name='dispatch')
+class PrescriptionDeleteView(DetailView):
+    model = Prescription
+    template_name = 'home/doctor/doctor_presc_confirm_delete.html'
+    success_url = reverse_lazy('doctor:doctor_detail')
+ 
 
+"""
+    def delete(self, request, *args, **kwargs):
+        presc = self.get_object()
+        messages.success(request, 'The Prescription %s was deleted with success!' % presc.patient)
+        return super().delete(request, *args, **kwargs)
+ 
+    def get_queryset(self):
+        return self.request.user.quizzes.all()
+
+ 
 @method_decorator([login_required, doctor_required], name='dispatch')
 class PrescriptionUpdateView(UpdateView):
     model = Prescription
@@ -82,7 +99,6 @@ class PrescriptionUpdateView(UpdateView):
     def get_success_url(self):
         return reverse('teachers:quiz_change', kwargs={'pk': self.object.pk})
 
-"""  
 @method_decorator([login_required, doctor_required], name='dispatch')
 class QuizDeleteView(DeleteView):
     model = Quiz
