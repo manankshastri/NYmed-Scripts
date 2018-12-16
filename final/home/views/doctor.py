@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse_lazy
+from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView, DetailView
 
@@ -65,17 +65,25 @@ class PrescriptionDeleteView(DetailView):
     model = Prescription
     context_object_name = 'prescription'
     template_name = 'home/doctor/prescription_confirm_delete.html'
+    pk_url_kwarg = 'presc_id'
     success_url = reverse_lazy('doctor:doctor_list')
-
+    
+    def get_context_data(self, **kwargs):
+        prescription = self.get_object()
+        kwargs['doctor'] = prescription.doctor
+        return super().get_context_data(**kwargs)
+    
     def delete(self, request, *args, **kwargs):
-        presc = self.get_object()
-        messages.success(request, 'The Prescription %s was deleted with success!' % presc.patient)
-        return super().delete(request, *args, **kwargs)
+        prescription = self.get_object()
+        messages.success(request, 'The prescription %s was deleted with success!' % prescription.id)
+        return super().delete(request, *args, **kwargs)   
 
     def get_queryset(self):
-        return self.request.user.doctor.all()
+        return Prescription.objects.filter(doctor = self.request.user.doctor)
 
-""" 
+    
+    
+"""
 @method_decorator([login_required, doctor_required], name='dispatch')
 class PrescriptionUpdateView(UpdateView):
     model = Prescription
