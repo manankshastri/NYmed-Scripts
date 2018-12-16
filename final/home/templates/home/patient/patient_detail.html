@@ -1,15 +1,29 @@
 {% extends "base.html" %}
 
 {% block content %}
-
-<div style="margin-left:20px;margin-top:20px">
-    <h4>Prescriptions: </h4>
-
-    {% for p in user.patient.prescription_set.all %}
-        <hr>
-        <p><strong>Doctor: </strong> {{p.doctor}}</p>
-        <p><strong>Prescription Date: </strong> {{p.dop}} &nbsp; &nbsp; &nbsp; &nbsp; <strong>Prescription Details: </strong> {{p.desc}}</p>
-        <p></p>
-    {% endfor %}
-</div>
+<h2>All Prescriptions</h2>
+<div class="card" style="margin-left: 50px; margin-top: 20px">
+    <table class="table mb-0" style="table-layout: fixed">
+      <thead>
+        <tr>
+          <th>Doctor</th>
+          <th>Prescription Date</th>
+          <th>Prescription Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in user.patient.prescription_set.all %}
+          <tr>
+            <td class="align-middle" style="text-align: justify">{{p.doctor}}</td>
+            <td class="align-middle" style="text-align: justify">{{p.dop}}</td>
+            <td class="align-middle" style="text-align: justify">{{p.desc}}</td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="5">There are no prescriptions.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 {% endblock %}
