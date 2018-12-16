@@ -14,7 +14,7 @@ urlpatterns = [
         path('doc/', doctor.DoctorListView.as_view(), name='doctor_list'),
         path('doc/profile/<int:pk>/', doctor.DoctorProfileView.as_view(), name='doctor_profile'),
         path('doc/<int:pk>/', doctor.DoctorDetailView.as_view(), name='doctor_detail'),
-        path('doc/<int:pk>/prescriptionadd/', doctor.PrescriptionCreateView.as_view(), name='doctor_addpresc'),
-        path('doc/<int:pk>/prescriptiondel/<int:presc_id>/', doctor.PrescriptionDeleteView.as_view(), name='prescription_confirm_delete'),
+        path('doc/<int:pk>/prescription/add/', doctor.PrescriptionCreateView.as_view(), name='doctor_addpresc'),
+        path('doc/<int:pk>/prescription/<int:ppk>/delete/', doctor.PrescriptionDeleteView.as_view(), name='prescription_confirm_delete'),
     ], 'home'), namespace='doctor')),
 ]

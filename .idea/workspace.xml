@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4a92ef6-6149-4655-8cc3-18a797c3d7fd" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/final/home/templates/home/doctor/doctor_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/templates/home/doctor/doctor_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/final/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final/home/templates/home/doctor/prescription_confirm_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/templates/home/doctor/prescription_confirm_delete.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/home/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/final/home/views/doctor.py" beforeDir="false" afterPath="$PROJECT_DIR$/final/home/views/doctor.py" afterDir="false" />
     </list>
@@ -294,12 +295,12 @@
       <workItem from="1543681404967" duration="16194000" />
       <workItem from="1543769036551" duration="4869000" />
       <workItem from="1544827001061" duration="2467000" />
-      <workItem from="1544936328943" duration="653000" />
+      <workItem from="1544936328943" duration="1253000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75140000" />
+    <option name="totallyTimeSpent" value="75740000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />

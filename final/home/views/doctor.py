@@ -6,7 +6,7 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, ListView, UpdateView, DetailView
+from django.views.generic import (CreateView, ListView, DeleteView, DetailView)
 
 from ..decorators import doctor_required
 from ..forms import DoctorSignUpForm
@@ -46,7 +46,6 @@ class DoctorProfileView(DetailView):
     template_name = 'home/doctor/doctor_profile.html'
     
 
-
 @method_decorator([login_required, doctor_required], name='dispatch')
 class PrescriptionCreateView(CreateView):
     model = Prescription
@@ -61,29 +60,46 @@ class PrescriptionCreateView(CreateView):
 
     
 @method_decorator([login_required, doctor_required], name='dispatch')
-class PrescriptionDeleteView(DetailView):
+class PrescriptionDeleteView(DeleteView):
     model = Prescription
     context_object_name = 'prescription'
     template_name = 'home/doctor/prescription_confirm_delete.html'
-    pk_url_kwarg = 'presc_id'
+    pk_url_kwarg = 'ppk'
     success_url = reverse_lazy('doctor:doctor_list')
+    
+    def delete(self, request, *args, **kwargs):
+        prescription = self.get_object()
+        messages.success(request, 'The prescription %s was deleted with success!' % prescription.id)
+        return super().delete(request, *args, **kwargs)
+    
+    def get_queryset(self):
+        return Prescription.objects.filter(doctor = self.request.user.doctor)
+    
+    
+"""    
+    model = Prescription
+    context_object_name = 'prescription'
+    template_name = 'home/doctor/prescription_confirm_delete.html'
+    pk_url_kwarg = 'prescription'
     
     def get_context_data(self, **kwargs):
         prescription = self.get_object()
         kwargs['doctor'] = prescription.doctor
         return super().get_context_data(**kwargs)
-    
+
     def delete(self, request, *args, **kwargs):
         prescription = self.get_object()
         messages.success(request, 'The prescription %s was deleted with success!' % prescription.id)
         return super().delete(request, *args, **kwargs)   
 
     def get_queryset(self):
-        return Prescription.objects.filter(doctor = self.request.user.doctor)
+        return Prescription.objects.filter(doctor__ssn = self.request.user.doctor.ssn)
+    
+    def get_sucess_url(self):
+        prescription =self.get_object()
+        return reverse('doctor:doctor_detail', kwargs={'pk': prescription.doctor.ssn})
+    
 
-    
-    
-"""
 @method_decorator([login_required, doctor_required], name='dispatch')
 class PrescriptionUpdateView(UpdateView):
     model = Prescription

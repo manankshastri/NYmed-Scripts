@@ -9,7 +9,6 @@
     <table class="table mb-0">
       <thead>
         <tr>
-          <th>ID</th>
           <th>Patient</th>
           <th>Prescription Date</th>
           <th>Prescription Details</th>
@@ -18,7 +17,6 @@
       <tbody>
         {% for p in user.doctor.prescription_set.all %}
           <tr>
-            <td class="align-middle">{{p.id}}</td>
             <td class="align-middle">{{p.patient}}</td>
             <td class="align-middle">{{p.dop}}</td>
             <td class="align-middle">{{p.desc}}</td>
