@@ -65,7 +65,7 @@ class PrescriptionDeleteView(DeleteView):
     context_object_name = 'prescription'
     template_name = 'home/doctor/prescription_confirm_delete.html'
     pk_url_kwarg = 'ppk'
-    success_url = reverse_lazy('doctor:doctor_list')
+    # success_url = reverse_lazy('doctor:doctor_list')
     
     def delete(self, request, *args, **kwargs):
         prescription = self.get_object()
@@ -75,7 +75,9 @@ class PrescriptionDeleteView(DeleteView):
     def get_queryset(self):
         return Prescription.objects.filter(doctor = self.request.user.doctor)
     
-    
+    def get_success_url(self):
+        doc = self.object.doctor
+        return reverse_lazy('doctor:doctor_detail', kwargs={'pk': doc.ssn})
 """    
     model = Prescription
     context_object_name = 'prescription'
