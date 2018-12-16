@@ -23,7 +23,7 @@
             <td class="align-middle">{{p.dop}}</td>
             <td class="align-middle">{{p.desc}}</td>
             <td class="text-right">
-              <a href="{% url 'doctor:doctor_delpresc' user.doctor.ssn p.id %}" class="btn btn-primary">Delete</a>
+              <a href="{% url 'doctor:prescription_confirm_delete' user.doctor.ssn %}" class="btn btn-primary">Delete</a>
             </td>
           </tr>
         {% empty %}

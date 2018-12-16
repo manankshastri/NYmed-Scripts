@@ -63,20 +63,19 @@ class PrescriptionCreateView(CreateView):
 @method_decorator([login_required, doctor_required], name='dispatch')
 class PrescriptionDeleteView(DetailView):
     model = Prescription
-    template_name = 'home/doctor/doctor_presc_confirm_delete.html'
-    success_url = reverse_lazy('doctor:doctor_detail')
- 
+    context_object_name = 'prescription'
+    template_name = 'home/doctor/prescription_confirm_delete.html'
+    success_url = reverse_lazy('doctor:doctor_list')
 
-"""
     def delete(self, request, *args, **kwargs):
         presc = self.get_object()
         messages.success(request, 'The Prescription %s was deleted with success!' % presc.patient)
         return super().delete(request, *args, **kwargs)
- 
-    def get_queryset(self):
-        return self.request.user.quizzes.all()
 
- 
+    def get_queryset(self):
+        return self.request.user.doctor.all()
+
+""" 
 @method_decorator([login_required, doctor_required], name='dispatch')
 class PrescriptionUpdateView(UpdateView):
     model = Prescription
