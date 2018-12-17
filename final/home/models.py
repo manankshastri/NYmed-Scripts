@@ -17,13 +17,13 @@ class Patient(models.Model):
     first_name = models.CharField('First Name', max_length=50, blank=False)
     last_name = models.CharField('Last Name', max_length=50, blank=False)
     email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
-    gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='N/A')
+    gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='M')
     
     class Meta:
         ordering = ['ssn']
 
     def __str__(self):
-        return f'{self.first_name} {self.last_name}'
+        return f'{self.user.first_name} {self.user.last_name}'
 
     def get_absolute_url(self):
         """Returns the url to access a detail record for this patient."""
@@ -63,19 +63,17 @@ class Pharmacy(models.Model):
 
 class Doctor(models.Model):
     # model representing doctor
-    PREFIX = [('Dr', 'Dr')]
     GENDER_CHOICES = [('M', 'Male'), ('F', 'Female')]
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     ssn = models.IntegerField('SSN', blank=False, primary_key=True)
-    prefix = models.CharField(max_length=2, choices=PREFIX)
     first_name = models.CharField('First Name', max_length=50, blank=False)
     last_name = models.CharField('Last Name', max_length=50, blank=False)
-    gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='N/A')
+    gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='M')
     email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
     specialty = models.CharField(max_length=50, default='ENT')
 
     def __str__(self):
-        return f'{self.prefix} {self.first_name} {self.last_name} ({self.specialty})'
+        return f'{self.user.first_name} {self.user.last_name} ({self.specialty})'
 
     class Meta:
         ordering = ['ssn']
@@ -94,7 +92,7 @@ class Prescription(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.SET_NULL, null=True)
     doctor = models.ForeignKey(Doctor, on_delete=models.SET_NULL, null=True)
     dop = models.DateField('Prescription Date', null=True, blank=False)
-    desc = models.TextField('Prescription Details', null=True)
+    desc = models.CharField('Prescription Details', null=True, max_length=150)
 
     class Meta:
         ordering = ['patient']

@@ -17,7 +17,7 @@
       <tbody>
         {% for p in user.patient.prescription_set.all %}
           <tr>
-            <td class="align-middle" style="text-align: justify">{{p.doctor}}</td>
+            <td class="align-middle" style="text-align: justify">Dr {{p.doctor}}</td>
             <td class="align-middle" style="text-align: justify">{{p.dop}}</td>
             <td class="align-middle" style="text-align: justify">{{p.desc}}</td>
           </tr>

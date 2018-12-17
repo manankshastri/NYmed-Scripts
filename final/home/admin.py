@@ -15,7 +15,7 @@ class PrecInLine(admin.TabularInline):
 # define the doctor admin class
 class DoctorAdmin(admin.ModelAdmin):
     list_display = ('ssn', 'user', 'first_name', 'last_name', 'email', 'gender', 'specialty')
-    fields = ['user', 'ssn', ('prefix', 'first_name', 'last_name', 'email', 'gender'), 'specialty']
+    fields = ['user', 'ssn', ('first_name', 'last_name', 'email', 'gender'), 'specialty']
     inlines = [PrecInLine]
 
 
