@@ -3,12 +3,27 @@
 {% extends "base.html" %}
 
 {% block content %}
+<style>
+table, th, td {  
+  border: 2px solid #ddd;
+  text-align: left;
+}
 
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+}
+</style>
 <h2>All Prescriptions</h2>
-<div class="card" style="margin-left: 50px; margin-top: 20px">
+<div class="card" style="margin-left: 10px; margin-top: 20px">
     <table class="table mb-0">
       <thead>
         <tr>
+          <th>ID</th>
           <th>Doctor</th>
           <th>Prescription Date</th>
           <th>Prescription Details</th>
@@ -17,6 +32,7 @@
       <tbody>
         {% for p in user.patient.prescription_set.all %}
           <tr>
+            <td class="align-middle" style="text-align: justify">{{p.id}}</td>
             <td class="align-middle" style="text-align: justify">Dr {{p.doctor}}</td>
             <td class="align-middle" style="text-align: justify">{{p.dop}}</td>
             <td class="align-middle" style="text-align: justify">{{p.desc}}</td>
