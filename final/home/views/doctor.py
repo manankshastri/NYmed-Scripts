@@ -70,7 +70,7 @@ class PrescriptionDeleteView(DeleteView):
     
     def delete(self, request, *args, **kwargs):
         prescription = self.get_object()
-        messages.success(request, 'The prescription %s was deleted with success!' % prescription.id)
+        messages.success(request, 'The prescription of "%s" was deleted with success!' % prescription.patient)
         return super().delete(request, *args, **kwargs)
     
     def get_queryset(self):
