@@ -47,9 +47,9 @@ class Hospital(models.Model):
         ordering = ['id']
 
     def __str__(self):
-        return f'{self.id}'
+        return f'{self.depart}'
 
-
+"""
 class Pharmacy(models.Model):
     # for pharmacy info
     id = models.IntegerField('ID', primary_key=True)
@@ -60,6 +60,7 @@ class Pharmacy(models.Model):
 
     def __str__(self):
         return f'{self.drugid}'
+"""
 
 class Doctor(models.Model):
     # model representing doctor
@@ -71,9 +72,10 @@ class Doctor(models.Model):
     gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='M')
     email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
     specialty = models.CharField(max_length=50, default='ENT')
+    hospital = models.ForeignKey(Hospital, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
-        return f'{self.user.first_name} {self.user.last_name} ({self.specialty})'
+        return f'{self.first_name} {self.last_name} ({self.specialty})'
 
     class Meta:
         ordering = ['ssn']
