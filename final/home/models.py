@@ -17,7 +17,7 @@ class Patient(models.Model):
     first_name = models.CharField('First Name', max_length=50, blank=False)
     last_name = models.CharField('Last Name', max_length=50, blank=False)
     email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='N/A')
     
     class Meta:
         ordering = ['ssn']
@@ -70,9 +70,9 @@ class Doctor(models.Model):
     prefix = models.CharField(max_length=2, choices=PREFIX)
     first_name = models.CharField('First Name', max_length=50, blank=False)
     last_name = models.CharField('Last Name', max_length=50, blank=False)
-    gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
+    gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='N/A')
     email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
-    specialty = models.CharField(max_length=50)
+    specialty = models.CharField(max_length=50, default='ENT')
 
     def __str__(self):
         return f'{self.prefix} {self.first_name} {self.last_name} ({self.specialty})'

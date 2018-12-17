@@ -7,8 +7,6 @@ from home.models import (User, Patient, Doctor)
 
 
 class DoctorSignUpForm(UserCreationForm):
-    
-    
     class Meta(UserCreationForm.Meta):
         model = User
         fields = (
@@ -31,6 +29,14 @@ class DoctorSignUpForm(UserCreationForm):
 class PatientSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
+        fields = (
+            'username',
+            'first_name',
+            'last_name',
+            'email',
+            'password1',
+            'password2'
+        )
         
     @transaction.atomic    
     def save(self, commit=True):
