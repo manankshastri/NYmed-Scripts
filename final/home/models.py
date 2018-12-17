@@ -95,7 +95,7 @@ class Prescription(models.Model):
     desc = models.CharField('Prescription Details', null=True, max_length=150)
 
     class Meta:
-        ordering = ['patient']
+        ordering = ['-dop']
 
     def __str__(self):
         return f'{self.patient} {self.doctor} {self.desc}'
