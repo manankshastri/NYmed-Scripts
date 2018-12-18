@@ -5,9 +5,9 @@
 <br>
 <div class="container-fluid">
     <div class="row">
-        <ul>
-            <li><a href="{% url 'patient:patient_profile' user.patient.ssn%}">Profile</a></li>
-            <li><a href="{% url 'patient:patient_detail' user.patient.ssn %}">All Prescriptions</a></li>
+        <ul style="list-style-type:none" class="col-3 text-left">
+            <li><a href="{% url 'patient:patient_profile' user.patient.ssn%}" class="btn btn-outline-primary" role="button">Profile</a></li>
+            <li><a href="{% url 'patient:patient_detail' user.patient.ssn %}" class="btn btn-outline-primary" role="button">All Prescriptions</a></li>
         </ul>
         <div style="margin-left: 20px">
             <h1>Welcome, {{ user.first_name }} {{ user.last_name }}</h1>
