@@ -23,19 +23,19 @@ th, td {
     <table class="table mb-0">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Doctor</th>
-          <th>Prescription Date</th>
-          <th>Prescription Details</th>
+          <th class="align-middle">Prescription ID</th>
+          <th class="align-middle">Doctor</th>
+          <th class="align-middle">Prescription Date</th>
+          <th class="align-middle">Prescription Details</th>
         </tr>
       </thead>
       <tbody>
         {% for p in user.patient.prescription_set.all %}
           <tr>
-            <td class="align-middle" style="text-align: justify">{{p.id}}</td>
-            <td class="align-middle" style="text-align: justify">Dr {{p.doctor}}</td>
-            <td class="align-middle" style="text-align: justify">{{p.dop}}</td>
-            <td class="align-middle" style="text-align: justify">{{p.desc}}</td>
+            <td class="align-middle" style="text-align: left">{{p.id}}</td>
+            <td class="align-middle" style="text-align: left">Dr {{p.doctor}}</td>
+            <td class="align-middle" style="text-align: left">{{p.dop}}</td>
+            <td class="align-middle" style="text-align: left">{{p.desc}}</td>
           </tr>
         {% empty %}
           <tr>
