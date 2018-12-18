@@ -6,7 +6,7 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy, reverse
 from django.utils.decorators import method_decorator
-from django.views.generic import (CreateView, ListView, DeleteView, DetailView)
+from django.views.generic import (CreateView, ListView, DeleteView, DetailView, UpdateView)
 from django.contrib.messages.views import SuccessMessageMixin
 
 from ..decorators import doctor_required
@@ -66,12 +66,26 @@ class PrescriptionDeleteView(DeleteView):
     context_object_name = 'prescription'
     template_name = 'home/doctor/prescription_confirm_delete.html'
     pk_url_kwarg = 'ppk'
-    success_message = "Redirect successfully created!"
     
     def delete(self, request, *args, **kwargs):
         prescription = self.get_object()
         messages.success(request, 'The prescription of "%s" was deleted with success!' % prescription.patient)
         return super().delete(request, *args, **kwargs)
+    
+    def get_queryset(self):
+        return Prescription.objects.filter(doctor = self.request.user.doctor)
+    
+    def get_success_url(self):
+        doc = self.object.doctor
+        return reverse_lazy('doctor:doctor_detail', kwargs={'pk': doc.ssn})
+    
+@method_decorator([login_required, doctor_required], name='dispatch')
+class PrescriptionUpdateView(UpdateView):
+    model = Prescription
+    fields = ('dop', 'desc',)
+    context_object_name = 'prescription'
+    template_name = 'home/doctor/prescription_edit.html'
+    pk_url_kwarg = 'ppk'
     
     def get_queryset(self):
         return Prescription.objects.filter(doctor = self.request.user.doctor)

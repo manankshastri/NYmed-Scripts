@@ -20,14 +20,14 @@ th, td {
 </style>
 <h2>All Prescriptions</h2>
 <div class="card" style="margin-left: 10px; margin-top: 20px">
-    <table class="table mb-0">
-      <thead>
+    <table class="table mb-0" style="table-layout: auto">
+     <thead>
         <tr>
-          <th class="align-middle">Prescription ID</th>    
+          <th class="align-middle">Pres. ID</th>    
           <th class="align-middle">Patient</th>
           <th class="align-middle">Prescription Date</th>
           <th class="align-middle">Prescription Details</th>
-          <th class="align-middle"></th>
+          <th class="align-middle" colspan="2">&nbsp;</th>    
         </tr>
       </thead>
       <tbody>
@@ -37,13 +37,16 @@ th, td {
             <td class="align-middle" style="text-align: left">{{p.patient}}</td>
             <td class="align-middle" style="text-align: left">{{p.dop}}</td>
             <td class="align-middle" style="text-align: left">{{p.desc}}</td>
-            <td class="text-right">
-              <a href="{% url 'doctor:prescription_confirm_delete' user.doctor.ssn p.id %}" class="btn btn-primary">Delete</a>
+            <td class="align-middle">
+              <a href="{% url 'doctor:prescription_edit' user.doctor.ssn p.id %}" class="btn btn-primary">Edit</a> 
             </td>
+            <td class="align-middle">
+                <a href="{% url 'doctor:prescription_confirm_delete' user.doctor.ssn p.id %}" class="btn btn-primary">Delete</a>
+            </td>    
           </tr>
         {% empty %}
           <tr>
-            <td class="bg-light text-center font-italic" colspan="5">There are no prescriptions.</td>
+            <td class="bg-light text-center font-italic" colspan="6">There are no prescriptions.</td>
           </tr>
         {% endfor %}
       </tbody>

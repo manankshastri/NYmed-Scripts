@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 
 {% block content %}
-
-{% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
-{% endif %}
 
 {% if next %}
     {% if user.is_authenticated %}
@@ -14,30 +11,15 @@
         <p>Please login to see this page.</p>
     {% endif %}
 {% endif %}
-<div>
-    <div class="col-lg-5">
-        <h2>Login</h2>
+<div class="row">
+    <div class="col-md-6 col-sm-8 col-12">
+        <h2>Welcome</h2>
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
-            <table>
-                <tr>
-                    <td>{{ form.username.label_tag }}</td>
-                    <td>{{ form.username }}</td>
-                </tr>
-
-                <tr>
-                    <td>{{ form.password.label_tag }}</td>
-                    <td>{{ form.password }}</td>
-                </tr>
-
-            </table>
-
-            <input type="submit" value="Login" />
+            {{form | crispy }}
+            <button type="submit" class="btn btn-sucess">Login</button>
             <input type="hidden" name="next" value="{{ next }}" />
         </form>
     </div>
 </div>
-{# Assumes you setup the password_reset view in your URLconf #}
-<!--<p><a href="{% url 'password_reset' %}">Lost password?</a></p> -->
-
 {% endblock %}
