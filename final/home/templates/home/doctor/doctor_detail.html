@@ -33,10 +33,10 @@ th, td {
       <tbody>
         {% for p in user.doctor.prescription_set.all %}
           <tr>
-            <td class="align-middle" style="text-align: justify">{{p.id}}</td>
-            <td class="align-middle" style="text-align: justify">{{p.patient}}</td>
-            <td class="align-middle" style="text-align: justify">{{p.dop}}</td>
-            <td class="align-middle" style="text-align: justify">{{p.desc}}</td>
+            <td class="align-middle" style="text-align: left">{{p.id}}</td>
+            <td class="align-middle" style="text-align: left">{{p.patient}}</td>
+            <td class="align-middle" style="text-align: left">{{p.dop}}</td>
+            <td class="align-middle" style="text-align: left">{{p.desc}}</td>
             <td class="text-right">
               <a href="{% url 'doctor:prescription_confirm_delete' user.doctor.ssn p.id %}" class="btn btn-primary">Delete</a>
             </td>
