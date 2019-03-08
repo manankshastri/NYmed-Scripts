@@ -18,6 +18,7 @@ class Patient(models.Model):
     last_name = models.CharField('Last Name', max_length=50, blank=False)
     email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
     gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='M')
+    phone = models.IntegerField('Phone Number', default=123)
     
     class Meta:
         ordering = ['ssn']

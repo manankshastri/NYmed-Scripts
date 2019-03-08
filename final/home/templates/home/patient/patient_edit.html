@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<div style="margin-left:20px;">
+    <h2>{{ user.first_name }} {{ user.last_name}}</h2>
+    <form method="post" novalidate>
+           {% csrf_token %}
+           {{form | crispy }}
+           <button type="submit" class="btn btn-sucess">Save</button>
+           <a href="{% url 'patient:patient_profile' user.patient.ssn %}" class="btn btn-outline-secondary" role="button">Nevermind</a>
+       </form>
+</div>
+{% endblock %}
