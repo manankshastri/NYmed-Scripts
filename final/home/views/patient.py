@@ -52,14 +52,13 @@ class PatientProfileView(DetailView):
 @method_decorator([login_required, patient_required], name='dispatch')
 class PatientProfileUpdateView(UpdateView):
     model = Patient
-    fields = ('email', 'phone')
-    context_object_name = 'patient'
+    fields = ('email','phone',)
     template_name = 'home/patient/patient_edit.html'
     pk_url_kwarg = 'ppk'
     
     def get_queryset(self):
-        return Patient.objects.filter(patient=self.request.user.patient)
-    
+        return Patient.objects.filter(ssn=self.request.user.patient.ssn)
+        
     def get_sucess_url(self):
         pat = self.object.patient
         return reverse_lazy('patient:patient_profile', kwargs={'pk': pat.ssn})

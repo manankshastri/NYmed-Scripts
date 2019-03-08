@@ -13,11 +13,11 @@
             <hr>
             <p><strong>SSN: </strong> {{ user.patient.ssn }}</p>
             <p><strong>Gender: </strong>{{ user.patient.gender }}</p>
-            <p><strong>Email: </strong>{{ user.email }}</p>
+            <p><strong>Email: </strong>{{ user.patient.email }}</p>
             <p><strong>Phone: </strong>{{user.patient.phone}}</p>
         </div>
         <div class="col-6 text-right">
-            <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Edit</a>
+            <a href="{% url 'patient:patient_edit' user.patient.ssn user.patient.ssn%}" class="btn btn-primary" role="button">Edit</a>
           </div>    
       </div>
      </div>
