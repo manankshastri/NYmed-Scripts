@@ -6,9 +6,9 @@
 <div class="container-fluid">
     <div class="row">
         <ul style="list-style-type:none" class="col-3 text-left">
-            <li><a href="{% url 'doctor:doctor_profile' user.doctor.ssn %}" class="btn btn-outline-primary" role="button">Profile</a></li>
-            <li><a href="{% url 'doctor:doctor_detail' user.doctor.ssn %}" class="btn btn-outline-primary" role="button">All Prescriptions</a></li>
-            <li><a href="{% url 'doctor:doctor_addpresc' user.doctor.ssn %}" class="btn btn-outline-primary" role="button">Add Prescription</a></li>
+            <li><a href="{% url 'doctor:doctor_profile' user.doctor.ssn %}" class="btn btn-outline-primary" role="button"><strong>Profile</strong></a></li>
+            <li><a href="{% url 'doctor:doctor_detail' user.doctor.ssn %}" class="btn btn-outline-primary" role="button"><strong>All Prescriptions</strong></a></li>
+            <li><a href="{% url 'doctor:doctor_addpresc' user.doctor.ssn %}" class="btn btn-outline-primary" role="button"><strong>Add Prescription</strong></a></li>
         </ul>
         <div style="margin-left: 20px">
             <h1> Welcome, Dr {{ user.first_name }} {{ user.last_name}}</h1>    

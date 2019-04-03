@@ -5,7 +5,7 @@
 {% block content %}
     <h2>Sign up for a free account</h2>
     <p class="lead">Select below the type of account you want to create</p>
-    <a href="{% url 'patient_signup' %}" class="btn btn-student btn-lg" role="button">I'm a patient.</a>
-    <a href="{% url 'doctor_signup' %}" class="btn btn-teacher btn-lg" role="button">I'm a doctor.</a>
-    <a href="{% url 'pharmacist_signup' %}" class="btn btn-teacher btn-lg" role="button">I'm a pharmacist.</a>
+    <a href="{% url 'patient_signup' %}" class="btn btn-light btn-lg" role="button"><strong>I'm a patient.</strong></a>
+    <a href="{% url 'doctor_signup' %}" class="btn btn-success btn-lg" role="button"><strong>I'm a doctor.</strong></a>
+    <a href="{% url 'pharmacist_signup' %}" class="btn btn-danger btn-lg" role="button"><strong>I'm a pharmacist.</strong></a>
 {% endblock %}
