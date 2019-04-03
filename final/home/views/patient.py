@@ -4,9 +4,9 @@ from django.contrib.auth.decorators import login_required
 from django.db import transaction
 from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, ListView, UpdateView, DetailView
+from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
 
 from ..decorators import patient_required
 from ..forms import PatientSignUpForm
@@ -63,7 +63,6 @@ class PatientProfileUpdateView(UpdateView):
         pat = self.object.patient
         return reverse_lazy('patient:patient_profile', kwargs={'pk': pat.ssn})
     
-
-
+        
 
 

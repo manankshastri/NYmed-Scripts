@@ -11,6 +11,8 @@ def index(request):
     if request.user.is_authenticated:
         if request.user.is_doctor:
             return redirect('doctor:doctor_list')
-        else:
+        elif request.user.is_patient:
             return redirect('patient:patient_list')
+        else:
+            return redirect('pharmacist:pharmacist_list')
     return render(request, 'home/index.html')

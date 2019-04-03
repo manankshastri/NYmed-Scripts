@@ -13,6 +13,8 @@
         <link rel="stylesheet" type="text/css" href="{% static 'css/patients.css' %}">
     {% elif user.is_authenticated and user.is_doctor %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/doctors.css' %}">
+    {% elif user.is_authenticated and user.is_pharmacist %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/doctors.css' %}">
     {% else %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
     {% endif %}
@@ -27,6 +29,8 @@
                 <h1 class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/doctor.png' %}"></a></h1>
             {% elif user.is_authenticated and user.is_patient %}
                 <h1 class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/patient.png' %}"></a></h1>
+            {% elif user.is_authenticated and user.is_pharmacist %}
+                <h1 class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/email.png' %}"></a></h1>
             {% else %}
                 <h1 class="logo"><a href="{% url 'index' %}"><img src="{% static 'images/medical-history.png' %}"></a></h1>
             {% endif %}

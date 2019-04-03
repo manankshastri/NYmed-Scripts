@@ -1,5 +1,5 @@
 from django.urls import path, include
-from .views import home, patient, doctor
+from .views import home, patient, doctor, pharmacist
 
 urlpatterns = [
     path('', home.index, name='index'),
@@ -19,4 +19,12 @@ urlpatterns = [
         path('doc/<int:pk>/prescription/<int:ppk>/delete/', doctor.PrescriptionDeleteView.as_view(), name='prescription_confirm_delete'),
         path('doc/<int:pk>/prescription/<int:ppk>/edit/', doctor.PrescriptionUpdateView.as_view(), name='prescription_edit'),
     ], 'home'), namespace='doctor')),
+    
+    
+    path('pharmacist/', include(([
+        path('pha/', pharmacist.PharmacistListView.as_view(), name='pharmacist_list'),
+        path('pha/profile/<int:pk>/', pharmacist.PharmacistProfileView.as_view(), name='pharmacist_profile'),
+        path('pha/<int:pk>/', pharmacist.PharmacistDetailView, name='pharmacist_detail'),
+    ], 'home'), namespace='pharmacist')),
+    
 ]

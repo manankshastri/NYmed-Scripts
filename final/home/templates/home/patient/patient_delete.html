@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<h2 class="mb-3">Confirm deletion</h2>
+<p class="lead">Are you sure you want to delete <strong><b>{{ user.patient }}</b></strong>'s profile?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-lg">Yes, I'm sure</button>
+        <a href="{% url 'patient:patient_profile' user.patient.ssn %}" class="btn btn-outline-secondary btn-lg" role="button">Nevermind</a>
+    </form>
+{% endblock %}

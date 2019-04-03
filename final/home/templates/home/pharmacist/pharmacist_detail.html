@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+table, td, th {  
+  border: 2px solid #ddd;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 10px;
+}
+</style>
+<h2>All Prescriptions</h2>
+<div class="card" style="margin-left: 10px; margin-top: 20px">
+    <table class="table mb-0" style="table-layout: auto">
+     <thead>
+        <tr>
+          <th class="align-middle">Pres. ID</th>    
+          <th class="align-middle">Patient</th>
+          <th class="align-middle">Doctor</th>
+          <th class="align-middle">Prescription Date</th>
+          <th class="align-middle">Prescription Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for p in pres_all %}
+          <tr>
+            <td class="align-middle" style="text-align: left">{{p.id}}</td>
+            <td class="align-middle" style="text-align: left">{{p.patient}}</td>
+            <td class="align-middle" style="text-align: left">{{p.doctor}}</td>  
+            <td class="align-middle" style="text-align: left">{{p.dop}}</td>
+            <td class="align-middle" style="text-align: left">{{p.desc}}</td> 
+          </tr>
+        {% empty %}
+          <tr>
+            <td class="bg-light text-center font-italic" colspan="6">There are no prescriptions.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
