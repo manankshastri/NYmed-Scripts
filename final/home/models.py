@@ -20,6 +20,7 @@ class Patient(models.Model):
     email = models.EmailField('Email', max_length=40, blank=True, null=True, unique=True)
     gender = models.CharField(max_length=3, choices=GENDER_CHOICES, default='M')
     phone = models.IntegerField('Phone Number', blank=True, null=True)
+    creditcard = models.IntegerField('Credit Card Number', blank=True, null=True)
     
     class Meta:
         ordering = ['ssn']

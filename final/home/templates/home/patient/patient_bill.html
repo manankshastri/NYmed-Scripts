@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h2 style="text-align: center">BILL DETAILS</h2>
+<div style="margin: 50px 100px;border:solid;padding: 20px">
+    <div style="padding-bottom: 15px">
+        <table style="width: 130%">
+            <tr>
+                <td>Patient Name: {{prescription.patient}}</td>
+                <td><strong><u>Bill Date: {{prescription.dop}}</u></strong></td>
+            </tr> 
+        </table>
+    </div>
+    <div style="padding-right: 80px">
+        <p>Prescription Date: {{prescription.dop}}</p>
+        <p>Doctor: {{prescription.doctor}}</p>
+        <p>Prescription Details:</p>
+        <table style="width: 100%">
+            <tr>
+                <td><strong>{{prescription.desc}}</strong></td>
+                <td style="text-align: right">Total: $ 10.00</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div style="margin: 50px 100px;border:solid;padding: 20px">
+    <form method="post" novalidate>
+        <strong>Credit Card Number:</strong> 
+        <input type="number" value={{prescription.patient.creditcard}}>
+    </form>
+</div>
+
+
+
+{% endblock %}

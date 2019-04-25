@@ -6,7 +6,6 @@
 <style>
 table, th, td {  
   border: 2px solid #ddd;
-  text-align: left;
 }
 
 table {
@@ -15,27 +14,35 @@ table {
 }
 
 th, td {
-  padding: 10px;
+    padding: 0px;
 }
 </style>
 <h2>ALL PRESCRIPTIONS</h2>
 <div class="card" style="margin-left: 10px; margin-top: 20px">
     <table class="table mb-0">
+    <col width="8">
+    <col width="20">
+    <col width="20">
+    <col width="20">    
+    <col width="20">
       <thead>
         <tr>
-          <th class="align-middle">PRESC. ID</th>
-          <th class="align-middle">DOCTOR</th>
-          <th class="align-middle">PRESCRIPTION DATE</th>
-          <th class="align-middle">PRESCRIPTION DETAILS</th>
+          <th style="text-align: center">PRESC. ID</th>
+          <th style="text-align: center">DOCTOR</th>
+          <th style="text-align: center">PRESCRIPTION DATE</th>
+          <th style="text-align: center">PRESCRIPTION DETAILS</th>
+          <th style="text-align: center">BILL DETAILS</th>
         </tr>
       </thead>
       <tbody>
         {% for p in user.patient.prescription_set.all %}
           <tr>
-            <td class="align-middle" style="text-align: left">{{p.id}}</td>
-            <td class="align-middle" style="text-align: left">Dr {{p.doctor}}</td>
-            <td class="align-middle" style="text-align: left">{{p.dop}}</td>
-            <td class="align-middle" style="text-align: left">{{p.desc}}</td>
+            <td class="align-middle" style="text-align: center">{{p.id}}</td>
+            <td class="align-middle" style="text-align: center">Dr {{p.doctor}}</td>
+            <td class="align-middle" style="text-align: center">{{p.dop}}</td>
+            <td class="align-middle" style="text-align: center">{{p.desc}}</td>
+            <td class="align-middle" style="text-align: center">
+                <a href="{% url 'patient:patient_bill' user.patient.ssn p.id %}" class="btn btn-primary">View Bill</a></td>
           </tr>
         {% empty %}
           <tr>
