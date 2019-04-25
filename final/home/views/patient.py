@@ -67,12 +67,20 @@ class PatientProfileUpdateView(UpdateView):
 class PatientBillDetailView(DetailView):
     model = Prescription
     template_name = 'home/patient/patient_bill.html'
-    fields = ('dop', 'desc',)
     context_object_name = 'prescription'
     pk_url_kwarg = 'ppk'
     
     def get_queryset(self):
         return Prescription.objects.filter(patient = self.request.user.patient)
-        
 
-
+@method_decorator([login_required, patient_required], name='dispatch')
+class PatientBillConfirmUpdateView(UpdateView):
+    model = Patient
+    fields = ('creditcard',)
+    template_name = 'home/patient/patient_confirm_bill.html'
+    pk_url_kwarg = 'ppk'
+    
+    def get_sucess_url(self):
+        pat = self.object.patient
+        return reverse_lazy('patient:patient_detail', kwargs={'pk': pat.ssn})
+    

@@ -5,7 +5,7 @@
 {% block content %}
 
 <h2 style="text-align: center">BILL DETAILS</h2>
-<div style="margin: 50px 100px;border:solid;padding: 20px">
+<div style="margin: 20px 100px;border:solid;padding: 20px">
     <div style="padding-bottom: 15px">
         <table style="width: 130%">
             <tr>
@@ -26,11 +26,9 @@
         </table>
     </div>
 </div>
-<div style="margin: 50px 100px;border:solid;padding: 20px">
-    <form method="post" novalidate>
-        <strong>Credit Card Number:</strong> 
-        <input type="number" value={{prescription.patient.creditcard}}>
-    </form>
+
+<div>
+    <p style="text-align: center;padding-top: -90px"><a href="{% url 'patient:patient_confirm_bill' user.patient.ssn user.patient.ssn%}" class="btn btn-primary" role="button"><strong>Pay Now</strong></a></p>
 </div>
 
 

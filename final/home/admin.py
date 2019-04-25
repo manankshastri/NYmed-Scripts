@@ -26,8 +26,8 @@ admin.site.register(Doctor, DoctorAdmin)
 
 @admin.register(Patient)
 class PatientAdmin(admin.ModelAdmin):
-    list_display = ('ssn', 'user', 'first_name', 'last_name','email', 'gender', 'phone')
-    fields = ['ssn', ('user', 'first_name', 'last_name','email', 'phone'), 'gender']
+    list_display = ('ssn', 'user', 'first_name', 'last_name','email', 'gender', 'phone','creditcard')
+    fields = ['ssn', ('user', 'first_name', 'last_name','email', 'phone','creditcard'), 'gender']
 
 
 @admin.register(Prescription)

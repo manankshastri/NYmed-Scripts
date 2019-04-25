@@ -10,6 +10,7 @@ urlpatterns = [
         path('pro/<int:pk>', patient.PatientDetailView.as_view(), name='patient_detail'),
         path('pro/profile/<int:pk>/edit/<int:ppk>', patient.PatientProfileUpdateView.as_view(), name='patient_edit'),
         path('pro/profile/<int:pk>/viewbill/<int:ppk>', patient.PatientBillDetailView.as_view(), name='patient_bill'),
+        path('pro/profile/<int:pk>/viewbill/<int:ppk>/confirmbill', patient.PatientBillConfirmUpdateView.as_view(), name='patient_confirm_bill'),
     ], 'home'), namespace='patient')),
 
     path('doctor/', include(([

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<h2 style="text-align: center">CREDIT CARD DETAILS</h2>
+<div style="margin: 15px 100px;border: solid;padding: 15px">
+    <p style="text-align: center"><strong>Total : $10.00</strong></p>
+</div>
+<div style="margin: 15px 100px;border:solid;padding: 20px">
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{form | crispy }}
+        <p style="text-align: center"><button type="submit" class="btn btn-primary">CONFIRM PAYMENT</button>
+            <a href="{% url 'patient:patient_detail' user.patient.ssn %}" class="btn btn-outline-secondary" role="button">Nevermind</a></p>
+    </form>
+</div>
+
+
+{% endblock %}
