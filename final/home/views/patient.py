@@ -6,7 +6,7 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView
+from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView, FormView
 
 from ..decorators import patient_required
 from ..forms import PatientSignUpForm
@@ -59,9 +59,8 @@ class PatientProfileUpdateView(UpdateView):
     def get_queryset(self):
         return Patient.objects.filter(ssn=self.request.user.patient.ssn)
         
-    def get_sucess_url(self):
-        pat = self.object.patient
-        return reverse_lazy('patient:patient_profile', kwargs={'pk': pat.ssn})
+    def get_success_url(self):
+        return reverse_lazy('patient:patient_profile', kwargs={'pk': self.request.user.patient.ssn})
 
 @method_decorator([login_required, patient_required], name='dispatch')
 class PatientBillDetailView(DetailView):
@@ -80,7 +79,9 @@ class PatientBillConfirmUpdateView(UpdateView):
     template_name = 'home/patient/patient_confirm_bill.html'
     pk_url_kwarg = 'ppk'
     
-    def get_sucess_url(self):
-        pat = self.object.patient
-        return reverse_lazy('patient:patient_detail', kwargs={'pk': pat.ssn})
+    def get_queryset(self):
+        return Patient.objects.filter(ssn=self.request.user.patient.ssn)
+    
+    def get_success_url(self):
+        return reverse_lazy('patient:patient_detail', kwargs={'pk': self.request.user.patient.ssn})
     

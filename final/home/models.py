@@ -30,7 +30,7 @@ class Patient(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a detail record for this patient."""
-        return reverse('patient:patient_profile', args=[str(self.ssn)])
+        return reverse('patient:patient_detail', args=[str(self.ssn)])
 
 def create_profile(sender, **kwargs):
     if kwargs['created']:
