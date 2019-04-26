@@ -7,6 +7,7 @@ from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse, reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView, DetailView, DeleteView, FormView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from ..decorators import patient_required
 from ..forms import PatientSignUpForm
@@ -50,11 +51,12 @@ class PatientProfileView(DetailView):
     
     
 @method_decorator([login_required, patient_required], name='dispatch')
-class PatientProfileUpdateView(UpdateView):
+class PatientProfileUpdateView(SuccessMessageMixin, UpdateView):
     model = Patient
     fields = ('email','phone','creditcard',)
     template_name = 'home/patient/patient_edit.html'
     pk_url_kwarg = 'ppk'
+    success_message = 'Profile Edited Successfully!!'
     
     def get_queryset(self):
         return Patient.objects.filter(ssn=self.request.user.patient.ssn)
@@ -73,11 +75,13 @@ class PatientBillDetailView(DetailView):
         return Prescription.objects.filter(patient = self.request.user.patient)
 
 @method_decorator([login_required, patient_required], name='dispatch')
-class PatientBillConfirmUpdateView(UpdateView):
+class PatientBillConfirmUpdateView(SuccessMessageMixin, UpdateView):
     model = Patient
     fields = ('creditcard',)
     template_name = 'home/patient/patient_confirm_bill.html'
     pk_url_kwarg = 'ppk'
+    
+    success_message = 'Bill Paid!!!'
     
     def get_queryset(self):
         return Patient.objects.filter(ssn=self.request.user.patient.ssn)
