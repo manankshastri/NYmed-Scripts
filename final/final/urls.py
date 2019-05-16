@@ -19,7 +19,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic import RedirectView
 
-from home.views import home, patient, doctor, pharmacist
+from home.views import home, patient, doctor, pharmacist, insurance
 # from home import views
 
 urlpatterns = [
@@ -31,6 +31,7 @@ urlpatterns = [
     path('accounts/signup/patient/', patient.PatientSignUpView.as_view(), name='patient_signup'),
     path('accounts/signup/doctor/', doctor.DoctorSignUpView.as_view(), name='doctor_signup'),
     path('accounts/signup/pharmacist/', pharmacist.PharmacistSignUpView.as_view(), name='pharmacist_signup'),
+    path('accounts/signup/insurance/', insurance.InsuranceSignUpView.as_view(), name='insurance_signup'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 

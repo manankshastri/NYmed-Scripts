@@ -8,6 +8,7 @@ class User(AbstractUser):
     is_patient = models.BooleanField(default=False)
     is_doctor = models.BooleanField(default=False)
     is_pharmacist = models.BooleanField(default=False)
+    is_insurance = models.BooleanField(default=False)
 
     
 class Patient(models.Model):
@@ -39,6 +40,27 @@ def create_profile(sender, **kwargs):
 post_save.connect(create_profile, sender=User)
     
 
+    
+class Insurance(models.Model):
+    # for insurance info
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    ssn = models.IntegerField('SSN', blank=False, primary_key=True)
+    name = models.CharField('Name', max_length=50, blank=True)
+    
+    class Meta:
+        ordering = ['ssn']
+        
+    def __str__(self):
+        return f'{self.name}'
+    
+    def get_absolute_url(self):
+        return reverse('insurance:insurance_detail', args=[str(self.ssn)])
+
+def create_profile_ins(sender, **kwargs):
+    if kwargs['created']:
+        insurance = Insurance.objects.create(user=kwargs['instance'])
+
+post_save.connect(create_profile_ins, sender=User)
 
 class Pharmacist(models.Model):
     # for pharmacist info
@@ -97,7 +119,7 @@ class Prescription(models.Model):
     desc = models.CharField('Prescription Details', null=True, max_length=150)
 
     class Meta:
-        ordering = ['-dop']
+        ordering = ['patient', '-dop']
 
     def __str__(self):
         return f'{self.patient} {self.doctor} {self.desc}'

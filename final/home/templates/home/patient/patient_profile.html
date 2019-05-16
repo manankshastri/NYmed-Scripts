@@ -16,6 +16,7 @@
             <p><strong>Email: </strong>{{ user.patient.email }}</p>
             <p><strong>Phone: </strong>{{user.patient.phone}}</p>
             <p><strong>Credit Card Number: </strong>{{user.patient.creditcard}}</p>
+            <p><strong>Insurance: </strong>{{user.patient.ins}}</p>
         </div>
         <div class="col-6 text-right">
             <a href="{% url 'patient:patient_edit' user.patient.ssn user.patient.ssn%}" class="btn btn-primary" role="button"><strong>Edit Profile</strong></a>

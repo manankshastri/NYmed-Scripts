@@ -48,3 +48,5 @@ class PharmacistListView(ListView):
 class PharmacistProfileView(DetailView):
     model = Pharmacist
     template_name = 'home/pharmacist/pharmacist_profile.html'
+    
+    

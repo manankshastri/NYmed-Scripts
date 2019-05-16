@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <h2 style="text-align: center">BILL DETAILS</h2>
@@ -25,6 +26,10 @@
             </tr>
         </table>
     </div>
+</div>
+
+<div>
+    <p style="text-align: center;padding-top: -90px"><a href="{% url 'patient:patient_confirm_bill' user.patient.ssn user.patient.ssn%}" class="btn btn-primary" role="button"><strong>Pay Now</strong></a></p>
 </div>
 
 

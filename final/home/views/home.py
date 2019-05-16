@@ -13,6 +13,8 @@ def index(request):
             return redirect('doctor:doctor_list')
         elif request.user.is_patient:
             return redirect('patient:patient_list')
-        else:
+        elif request.user.is_pharmacist:
             return redirect('pharmacist:pharmacist_list')
+        else:
+            return redirect('insurance:insurance_list')
     return render(request, 'home/index.html')

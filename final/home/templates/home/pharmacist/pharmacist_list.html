@@ -9,7 +9,7 @@
             <li><a href="{% url 'pharmacist:pharmacist_detail' user.pharmacist.ssn %}" class="btn btn-outline-primary" role="button"><strong>All Prescriptions</strong></a></li>
         </ul>
         <div style="margin-left: 20px">
-            <h1> Welcome, Pharmacist {{ user.pharmacist.ssn }}</h1>    
+            <h1> Welcome, {{ user.username | title}}</h1>    
         </div>
     </div>
 </div>

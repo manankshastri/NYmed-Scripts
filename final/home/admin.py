@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Patient, Doctor, Prescription, Pharmacist
+from .models import Patient, Doctor, Prescription, Pharmacist, Insurance
 from django.contrib.auth import get_user_model
 # Register your models here.
 
@@ -10,7 +10,6 @@ admin.site.register(User)
 
 class PrecInLine(admin.TabularInline):
     model = Prescription
-
 
 
 # define the doctor admin class
@@ -29,7 +28,6 @@ class PatientAdmin(admin.ModelAdmin):
     list_display = ('ssn', 'user', 'first_name', 'last_name','email', 'gender', 'phone','creditcard')
     fields = ['ssn', ('user', 'first_name', 'last_name','email', 'phone','creditcard'), 'gender']
 
-
 @admin.register(Prescription)
 class PrescriptionAdmin(admin.ModelAdmin):
     list_display = ('patient', 'doctor', 'dop', 'desc')
@@ -39,3 +37,9 @@ class PrescriptionAdmin(admin.ModelAdmin):
 class PharmacistAdmin(admin.ModelAdmin):
     list_display = ('ssn', 'user', 'name')
     fields = ['ssn', 'user', 'name']
+    
+@admin.register(Insurance)
+class InsuranceAdmin(admin.ModelAdmin):
+    list_display = ('ssn', 'user', 'name')
+    fields = ['ssn', 'user', 'name']
+    
